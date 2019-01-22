@@ -1,0 +1,37 @@
+{
+  "name": "vue-err",
+  "version": "1.0.0",
+  "description": "Error state management through Vuex",
+  "main": "dist/index.js",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run test:unit",
+    "test:unit": "jest",
+    "test:unit:watch": "jest --watchAll",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'"
+  },
+  "keywords": [
+    "error",
+    "state",
+    "management",
+    "vue",
+    "vuex"
+  ],
+  "author": "William DA SILVA <william.da.silva@outlook.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/vue": "^2.0.0",
+    "@vue/test-utils": "^1.0.0-beta.28",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.9",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.4",
+    "vue-template-compiler": "^2.5.22",
+    "vuex": "^3.1.0"
+  },
+  "dependencies": {}
+}
