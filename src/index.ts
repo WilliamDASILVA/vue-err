@@ -1,5 +1,8 @@
 type HasGetter = (error: string) => boolean;
 
+/**
+ * @class VueErr
+ */
 export class VueErr {
   private store: any;
   private vueHandler: any;
@@ -17,14 +20,32 @@ export class VueErr {
     }
   }
 
+  /**
+   * Add the error in the currently visible errors stack.
+   * @method show
+   * @param {string} error - The error name to be shown
+   * @returns {void}
+   */
   public show(error: string): void {
     this.store.commit("err/SHOW", error);
   }
 
+  /**
+   * Remove the error in the currently visible errors stack.
+   * @method hide
+   * @param {string} error - The error name to be hidden
+   * @returns {void}
+   */
   public hide(error: string): void {
     this.store.commit("err/HIDE", error);
   }
 
+  /**
+   * Returns true if the error is present in the errors stack
+   * @method has
+   * @param {string} error
+   * @returns {boolean} hasError
+   */
   public has(error: string): boolean {
     return this.vueHandler.has(error);
   }
@@ -61,6 +82,10 @@ export default {
   install(Vue: any) {
     Vue.prototype.$err = null;
 
+    /**
+     * Adds a global Vue mixin that will be called for every element
+     * util the Vuex store is available.
+     */
     Vue.mixin({
       beforeCreate() {
         const { store, parent }: any = this.$options;
